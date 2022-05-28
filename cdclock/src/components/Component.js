@@ -1,6 +1,5 @@
 import './Component.css';
 import { Button } from 'react-bootstrap';
-import PresentTime from './presenttime'
 import React from 'react';
 
 class Component extends React.Component {
@@ -11,12 +10,14 @@ class Component extends React.Component {
     }
   }
   componentDidMount() {
+    // every 1 sec trigger the tick() function
     this.timerID = setInterval(
       () => this.tick(),
       1000
     );
   }
   tick() {
+    //every 1 sec update the state
     this.setState({
       date: new Date().toLocaleTimeString()
     });
